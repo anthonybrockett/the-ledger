@@ -20,6 +20,13 @@ code {
   --tan-3: #E2D9D1;
   --tan-4: #D3C1AE;
   --orange: #F67F00;
+  --crimson: #700921;
+  --olivegreen: #52584D;
+  --brown: #311815;
+  --sagegreen: #B3C1A8;
+  --pewter: #C1C8D1;
+  --babyblue: #8BC3EC;
+  --darkblue: #04153B;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -35,7 +42,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: var(--white);
   padding: 2vmin;
   height: 100vh;
 }
@@ -132,10 +139,8 @@ input:focus {
 }
 
 button, a.button {
-  margin: 1vmin;
-  padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: var(--crimson);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;

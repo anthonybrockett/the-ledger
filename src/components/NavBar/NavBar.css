@@ -1,0 +1,22 @@
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-rows: 50fr 1fr 1fr 1fr 1fr 1fr;
+    height: 100vh;
+    background-color: var(--crimson);
+    font-weight: bolder;
+    color: white;
+    padding: 3px;    
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+    align-items:flex-end;
+    bottom: 0;
+    right: 0;
+}
+
+nav > .logout {  
+    justify-content: end;
+}
