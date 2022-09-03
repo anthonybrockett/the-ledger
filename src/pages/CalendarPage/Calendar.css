@@ -25,11 +25,11 @@ body {
 main {
     box-sizing: border-box;
     display: grid;
-    background-color: var(--pewter);
+    background-color: var(--sagegreen);
     grid-template-areas:
     "calendar calendar calendar calendar nav"
     "calendar calendar calendar calendar nav"
-    "detail detail detail detil nav" ;
+    "detail detail detail detail nav" ;
 }
 
 nav {
@@ -57,7 +57,7 @@ nav > .logout {
 
 #calendar {
     grid-area: calendar;
-    height: 100vh;
+    height: 60vh;
 }
 
 .react-calendar__month-view__weekdays__weekday {
@@ -68,4 +68,13 @@ nav > .logout {
 abbr {
     border-bottom: none !important;
     text-decoration: none !important;
+}
+
+#detail {
+    grid-area: detail;
+}
+
+.cal-detail-title {
+    text-align: left;
+    margin-left: 2px;
 }
