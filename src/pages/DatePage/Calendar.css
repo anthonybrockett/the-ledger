@@ -1,0 +1,80 @@
+:root {
+    --white: #FFFFFF;
+    --tan-1: #FBF9F6;
+    --tan-2: #E7E2DD;
+    --tan-3: #E2D9D1;
+    --tan-4: #D3C1AE;
+    --orange: #F67F00;
+    --crimson: #700921;
+    --olivegreen: #52584D;
+    --brown: #311815;
+    --sagegreen: #B3C1A8;
+    --pewter: #C1C8D1;
+    --babyblue: #8BC3EC;
+    --darkblue: #04153B;
+    --text-light: #968c84;
+    --text-dark: #615954;
+  }
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    box-sizing: border-box;
+    display: grid;
+    background-color: var(--sagegreen);
+    grid-template-areas:
+    "calendar calendar calendar calendar nav"
+    "calendar calendar calendar calendar nav"
+    "detail detail detail detail nav" ;
+}
+
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-rows: 50fr 1fr 1fr 1fr 1fr 1fr;
+    height: 100vh;
+    background-color: var(--crimson);
+    font-weight: bolder;
+    color: white;
+    padding: 3px;    
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+    align-items:flex-end;
+    bottom: 0;
+    right: 0;
+}
+
+nav > .logout {  
+    justify-content: end;
+}
+
+#calendar {
+    grid-area: calendar;
+    height: 60vh;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    color: black;
+    font-weight: bolder;
+}
+
+abbr {
+    border-bottom: none !important;
+    text-decoration: none !important;
+}
+
+#detail {
+    grid-area: detail;
+}
+
+.cal-detail-title {
+    text-align: left;
+    margin-left: 2px;
+}

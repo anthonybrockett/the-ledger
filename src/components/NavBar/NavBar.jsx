@@ -17,10 +17,6 @@ export default function NavBar({ user, setUser }) {
       <br />
       <Link to='/calendar'>Calendar</Link>
       <br />
-      <Link to='/income'>Income</Link>
-      <br />
-      <Link to='/expense'>Expense</Link>
-      <br />
       <Link to='' onClick={handleLogOut} className="logout">Log Out</Link>
     </nav>
   );
