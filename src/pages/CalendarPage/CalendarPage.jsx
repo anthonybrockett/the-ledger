@@ -12,7 +12,6 @@ export default function CalendarPage() {
     const navigate = useNavigate();
 
 
-
     useEffect(function() {
         async function getDates() {
           const dates = await datesAPI.getAllForUser();
@@ -20,7 +19,7 @@ export default function CalendarPage() {
           setDates(dates);
         }
         getDates();
-      }, []);
+      });
 
 
     // async function handleSelectDate() {

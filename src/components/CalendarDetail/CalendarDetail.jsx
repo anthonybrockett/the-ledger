@@ -1,20 +1,26 @@
 import { useState } from 'react';
-import IncomeForm from "../IncomeForm/IncomeForm"
+import IncomeForm from "../IncomeForm/IncomeForm";
+import ExpenseForm from "../ExpenseForm/ExpenseForm"
 
 
-export default function CalendarDetail({dates, selectedDate}) {
-    const [incomeItem, setIncomeItem] = useState({ date: new Date(), amount: 0 });
+export default function CalendarDetail({dates, selectedDate, setSelectedDate}) {
+    const [incomeItems, setIncomeItems] = useState([]);
+    const [expenseItems, setExpenseItems] = useState([]);
 
     function addIncomeItem(incomeItem) {
-        setIncomeItem([...incomeItem, incomeItem])    
+        setIncomeItems([...incomeItems, incomeItem])    
+    }
+    
+    function addExpenseItem(expenseItem) {
+        setExpenseItems([...expenseItems, expenseItem])    
     }
 
     return (
         <div>
             <hr />
             <h3 className="cal-detail-title">{new Date(selectedDate).toLocaleDateString()}</h3>
-            <h3 className="cal-detail-title">{(dates[0])}</h3>
-            <IncomeForm addIncomeItem={addIncomeItem} selectedDate={selectedDate} />
+            <IncomeForm addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+            <ExpenseForm addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
         </div>
         
     );

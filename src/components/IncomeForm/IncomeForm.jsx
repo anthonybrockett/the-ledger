@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 
-export default function IncomeForm({addIncomeItem, selectedDate}) {
-  const [incomeFormData, setIncomeFormData] = useState({ date: new Date().toLocaleDateString(), amount: 0 });
+export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate}) {
+  const [incomeFormData, setIncomeFormData] = useState({amount: 50, notes: ""});
 
   function handleAddIncomeItem(evt) {
     evt.preventDefault();
     addIncomeItem(incomeFormData);
-    setIncomeFormData({ date: new Date(), amount: 0 });
+    setIncomeFormData({ amount: 50, notes: "" });
   }
 
   function handleChange(evt) {
@@ -22,19 +22,25 @@ export default function IncomeForm({addIncomeItem, selectedDate}) {
     <>
       <h1>Income</h1>
       <form onSubmit={handleAddIncomeItem}>
-        <label>Date</label>
+        {/* <label>Date</label>
         <input
           name="date"
           type="datetime-local"
-          // placeholder={new Date()}
           value={incomeFormData.date}
           onChange={handleChange}
           required
-        />
+        /> */}
         <label>Amount</label>
         <input
           name="amount"
           value={incomeFormData.amount}
+          onChange={handleChange}
+          required
+          />
+        <label>Notes</label>
+        <input
+          name="notes"
+          value={incomeFormData.notes}
           onChange={handleChange}
           required
         />

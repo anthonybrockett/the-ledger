@@ -1,0 +1,51 @@
+import { useState } from "react";
+
+
+export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDate}) {
+  const [expenseFormData, setExpenseFormData] = useState({ date: selectedDate, amount: 50 });
+
+  function handleAddExpenseItem(evt) {
+    evt.preventDefault();
+    addExpenseItem(expenseFormData);
+    setExpenseFormData({ date: selectedDate, amount: 50 });
+  }
+
+  function handleChange(evt) {
+    const newExpenseFormData = {
+      ...expenseFormData,
+      [evt.target.name]: evt.target.value
+    };
+    setExpenseFormData(newExpenseFormData);
+  }
+
+  return (
+    <>
+      <h1>Expense</h1>
+      <form onSubmit={handleAddExpenseItem}>
+        {/* <label>Date</label> */}
+        {/* <input
+          name="date"
+          type="datetime-local"
+          value={expenseFormData.date}
+          onChange={handleChange}
+          required
+        /> */}
+        <label>Amount</label>
+        <input
+          name="amount"
+          value={expenseFormData.amount}
+          onChange={handleChange}
+          required
+        />
+        <label>Notes</label>
+        <input
+          name="notes"
+          value={expenseFormData.notes}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Add Expense</button>
+      </form>
+    </>
+  );
+}
