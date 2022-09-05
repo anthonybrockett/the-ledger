@@ -9,6 +9,8 @@ export default function CalendarPage() {
 
     const [dates, setDates] = useState([]);
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const [incomeItems, setIncomeItems] = useState([]);
+    const [expenseItems, setExpenseItems] = useState([]);
     const navigate = useNavigate();
 
 
@@ -27,6 +29,14 @@ export default function CalendarPage() {
     //     navigate('/calendar');
     // }
 
+    function addIncomeItem(incomeItem) {
+        setIncomeItems([...incomeItems, incomeItem])    
+    }
+    
+    function addExpenseItem(expenseItem) {
+        setExpenseItems([...expenseItems, expenseItem])    
+    }
+
     return (
         <>
             <div id="calendar">
@@ -34,7 +44,13 @@ export default function CalendarPage() {
                 <Calendar onChange={setSelectedDate} showNeighboringMonth={false} />
             </div>
             <div id="detail">
-                <CalendarDetail dates={dates} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                <CalendarDetail 
+                dates={dates} 
+                selectedDate={selectedDate} 
+                setSelectedDate={setSelectedDate} 
+                addIncomeItem={addIncomeItem}
+                addExpenseItem={addExpenseItem}
+                />
             </div>
         </>
     );

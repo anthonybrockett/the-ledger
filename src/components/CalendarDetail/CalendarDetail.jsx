@@ -1,27 +1,20 @@
 import { useState } from 'react';
 import IncomeForm from "../IncomeForm/IncomeForm";
 import ExpenseForm from "../ExpenseForm/ExpenseForm"
+import "./CalendarDetail.css"
 
 
-export default function CalendarDetail({dates, selectedDate, setSelectedDate}) {
-    const [incomeItems, setIncomeItems] = useState([]);
-    const [expenseItems, setExpenseItems] = useState([]);
-
-    function addIncomeItem(incomeItem) {
-        setIncomeItems([...incomeItems, incomeItem])    
-    }
-    
-    function addExpenseItem(expenseItem) {
-        setExpenseItems([...expenseItems, expenseItem])    
-    }
+export default function CalendarDetail({dates, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem}) {
 
     return (
-        <div>
+        <>
             <hr />
-            <h3 className="cal-detail-title">{new Date(selectedDate).toLocaleDateString()}</h3>
-            <IncomeForm addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-            <ExpenseForm addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-        </div>
+            <h3 id="cal-detail-title">{new Date(selectedDate).toLocaleDateString()}</h3>
+            <main>
+                    <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                    <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+            </main>
+        </>
         
     );
-  }
+}

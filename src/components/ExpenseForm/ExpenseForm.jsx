@@ -2,12 +2,12 @@ import { useState } from "react";
 
 
 export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDate}) {
-  const [expenseFormData, setExpenseFormData] = useState({ date: selectedDate, amount: 50 });
+  const [expenseFormData, setExpenseFormData] = useState({ amount: 50, notes: ""});
 
   function handleAddExpenseItem(evt) {
     evt.preventDefault();
     addExpenseItem(expenseFormData);
-    setExpenseFormData({ date: selectedDate, amount: 50 });
+    setExpenseFormData({ amount: 50, notes: "" });
   }
 
   function handleChange(evt) {
