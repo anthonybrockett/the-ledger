@@ -6,6 +6,7 @@ module.exports = {
   show,
   createDay,
   addIncomeToDay,
+  addExpenseToDay,
 };
 
 async function day(req, res) {
@@ -24,6 +25,13 @@ async function createDay(req, res) {
 async function addIncomeToDay(req, res) {
   const day = await Date.getDay(req.user._id);
   await day.addIncomeToDay(req.params.id);
+  res.json(day);
+}
+
+// Add an expense item to day
+async function addExpenseToDay(req, res) {
+  const day = await Date.getDay(req.user._id);
+  await day.addExpenseToDay(req.params.id);
   res.json(day);
 }
 
