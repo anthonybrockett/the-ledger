@@ -23,3 +23,9 @@ export function saveDay() {
     // Changing data on the server, so make it a POST request
     return sendRequest(`${BASE_URL}/day/createDay`, 'POST');
 }
+
+// Add income to the day
+export function addIncomeToDay(incomeId) {
+    // Just send itemId for best security (no pricing)
+    return sendRequest(`${BASE_URL}/day/income/${incomeId}`, 'POST');
+  }

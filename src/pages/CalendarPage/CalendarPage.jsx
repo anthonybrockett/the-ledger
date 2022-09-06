@@ -28,8 +28,9 @@ export default function CalendarPage() {
     //     navigate('/calendar');
     // }
 
-    function addIncomeItem(incomeItem) {
-        setIncomeItems([...incomeItems, incomeItem])    
+    async function addIncomeItem(incomeId) {
+        const updatedDay = await datesAPI.addIncomeToDay(incomeId);
+        setDay(updatedDay);
     }
     
     function addExpenseItem(expenseItem) {

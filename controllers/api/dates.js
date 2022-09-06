@@ -5,6 +5,7 @@ module.exports = {
   forUser,
   show,
   createDay,
+  addIncomeToDay,
 };
 
 async function day(req, res) {
@@ -17,6 +18,13 @@ async function createDay(req, res) {
     day.isSaved = true;
     await day.save();
     res.json(day);
+}
+
+// Add an income item to day
+async function addIncomeToDay(req, res) {
+  const day = await Date.getDay(req.user._id);
+  await day.addIncomeToDay(req.params.id);
+  res.json(day);
 }
 
 async function forUser(req, res) {

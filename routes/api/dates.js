@@ -10,5 +10,7 @@ router.get('/:id', datesCtrl.show);
 router.get('/day', datesCtrl.day);
 // POST /api/dates
 router.post('/day/createDay', datesCtrl.createDay);
+// POST /api/dates/day/income/:id
+router.post('/day/income/:id', datesCtrl.addIncomeToDay);
 
 module.exports = router;
