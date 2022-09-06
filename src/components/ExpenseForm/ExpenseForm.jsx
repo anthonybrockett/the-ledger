@@ -6,7 +6,7 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
 
   function handleAddExpenseItem(evt) {
     evt.preventDefault();
-    addExpenseItem(expenseFormData);
+    addExpenseItem({expenseFormData});
     setExpenseFormData({ amount: 50, notes: "" });
   }
 
@@ -21,7 +21,7 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
   return (
     <>
       <h1>Expense</h1>
-      <form onSubmit={() => handleAddExpenseItem(expenseFormData._id)}>
+      <form onSubmit={() => handleAddExpenseItem({expenseFormData})}>
         {/* <label>Date</label> */}
         {/* <input
           name="date"
