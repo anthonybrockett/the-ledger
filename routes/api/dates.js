@@ -6,7 +6,9 @@ const datesCtrl = require('../../controllers/api/dates');
 router.get('/user', datesCtrl.forUser);
 // GET /api/items/:id
 router.get('/:id', datesCtrl.show);
+// GET /api/dates/day
+router.get('/day', datesCtrl.day);
 // POST /api/dates
-router.post('/', datesCtrl.createDate);
+router.post('/day/createDay', datesCtrl.createDay);
 
 module.exports = router;

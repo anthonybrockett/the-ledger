@@ -1,10 +1,10 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import IncomeForm from "../IncomeForm/IncomeForm";
 import ExpenseForm from "../ExpenseForm/ExpenseForm"
 import "./CalendarDetail.css"
 
 
-export default function CalendarDetail({dates, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem}) {
+export default function CalendarDetail({date, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay}) {
 
     return (
         <>
@@ -13,6 +13,9 @@ export default function CalendarDetail({dates, selectedDate, setSelectedDate, ad
             <main>
                     <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
                     <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                    <button
+                    onClick={handleSaveDay}
+                    >Save Date</button>
             </main>
         </>
         

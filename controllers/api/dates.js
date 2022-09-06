@@ -1,10 +1,23 @@
 const Date = require('../../models/date');
 
 module.exports = {
-  index,
+  day,
+  forUser,
   show,
-  createDate,
+  createDay,
 };
+
+async function day(req, res) {
+  const day = await Date.getDay(req.user._id);
+  res.json(day);
+}
+
+async function createDay(req, res) {
+    const day = await Date.getDay(req.user._id);
+    day.isSaved = true;
+    await day.save();
+    res.json(day);
+}
 
 async function forUser(req, res) {
     const dates = await Date.find({user: req.user._id}).sort('-updatedAt');
@@ -15,9 +28,3 @@ async function show(req, res) {
   const date = await Date.findById(req.params.id);
   res.json(date);
 }
-
-async function createDate(req, res) {
-    const date = await Date.getDate(req.user._id);
-    await date.save();
-    res.json(date);
-  }

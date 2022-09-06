@@ -4,8 +4,8 @@ import sendRequest from './send-request';
 const BASE_URL = '/api/dates';
 
 // Retrieve an unsaved date for the logged in user
-export function getDate() {
-    return sendRequest(`${BASE_URL}/date`);
+export function getDay() {
+    return sendRequest(`${BASE_URL}/day`);
 }
 
 export function getAllForUser() {
@@ -19,7 +19,7 @@ export function getById(id) {
   return sendRequest(`${BASE_URL}/${id}`);
 }
 
-export function createDate() {
+export function saveDay() {
     // Changing data on the server, so make it a POST request
-    return sendRequest(`${BASE_URL}`, 'POST');
+    return sendRequest(`${BASE_URL}/day/createDay`, 'POST');
 }
