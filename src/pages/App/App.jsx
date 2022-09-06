@@ -18,7 +18,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path='/' element={<DashboardPage />} />
-            <Route path='/calendar' element={<CalendarPage />} />
+            <Route path='/dates' element={<CalendarPage />} />
           </Routes>
         </>
         :

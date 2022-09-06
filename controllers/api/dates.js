@@ -24,7 +24,7 @@ async function createDay(req, res) {
 // Add an income item to day
 async function addIncomeToDay(req, res) {
   const day = await Date.getDay(req.user._id);
-  await day.addIncomeToDay(req.params.id);
+  await day.addIncomeToDay(req.body);
   res.json(day);
 }
 

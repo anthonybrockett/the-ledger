@@ -22,14 +22,6 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
     <>
       <h1>Expense</h1>
       <form onSubmit={() => handleAddExpenseItem({expenseFormData})}>
-        {/* <label>Date</label> */}
-        {/* <input
-          name="date"
-          type="datetime-local"
-          value={expenseFormData.date}
-          onChange={handleChange}
-          required
-        /> */}
         <label>Amount</label>
         <input
           name="amount"

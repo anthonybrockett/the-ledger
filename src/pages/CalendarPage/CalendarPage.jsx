@@ -10,8 +10,8 @@ export default function CalendarPage() {
     const [day, setDay] = useState(null);
     const [dates, setDates] = useState([]);
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [incomeItems, setIncomeItems] = useState([]);
-    const [expenseItems, setExpenseItems] = useState([]);
+    // const [incomeItems, setIncomeItems] = useState([]);
+    // const [expenseItems, setExpenseItems] = useState([]);
     // const navigate = useNavigate();
 
 
@@ -23,8 +23,8 @@ export default function CalendarPage() {
         getDates();
       }, []);
 
-    async function addIncomeItem(incomeId) {
-        const updatedDay = await datesAPI.addIncomeToDay(incomeId);
+    async function addIncomeItem(incomeData) {
+        const updatedDay = await datesAPI.addIncomeToDay(incomeData);
         setDay(updatedDay);
     }
     

@@ -25,13 +25,11 @@ export function saveDay() {
 }
 
 // Add income to the day
-export function addIncomeToDay(incomeId) {
-    // Just send itemId for best security (no pricing)
-    return sendRequest(`${BASE_URL}/day/income/${incomeId}`, 'POST');
+export function addIncomeToDay(incomeData) {
+    return sendRequest(`${BASE_URL}/day/income/${incomeData}`, 'POST');
 }
 
 // Add expense to the day
 export function addExpenseToDay(expenseId) {
-    // Just send itemId for best security (no pricing)
     return sendRequest(`${BASE_URL}/day/expense/${expenseId}`, 'POST');
 }

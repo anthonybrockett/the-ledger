@@ -21,15 +21,7 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
   return (
     <>
       <h1>Income</h1>
-      <form onSubmit={() => handleAddIncomeItem({incomeFormData})}>
-        {/* <label>Date</label>
-        <input
-          name="date"
-          type="datetime-local"
-          value={incomeFormData.date}
-          onChange={handleChange}
-          required
-        /> */}
+      <form onSubmit={handleAddIncomeItem}>
         <label>Amount</label>
         <input
           name="amount"
