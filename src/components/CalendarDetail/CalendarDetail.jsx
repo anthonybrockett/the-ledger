@@ -2,6 +2,7 @@
 import IncomeForm from "../IncomeForm/IncomeForm";
 import ExpenseForm from "../ExpenseForm/ExpenseForm";
 import IncomeList from "../IncomeList/IncomeList";
+import ExpenseList from "../ExpenseList/ExpenseList"
 import "./CalendarDetail.css"
 
 
@@ -20,6 +21,11 @@ export default function CalendarDetail({dates, selectedDate, setSelectedDate, ad
                     <IncomeList 
                         id="income-detail"
                         incomeDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
+                    />
+                    <div style={{textAlign:"left", padding:"2px"}}>Expense</div>
+                    <ExpenseList 
+                        id="expense-detail"
+                        expenseDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
                     />
             </article>          
         </>  

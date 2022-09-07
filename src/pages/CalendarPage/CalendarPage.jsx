@@ -22,7 +22,7 @@ export default function CalendarPage() {
           setDates(dates)
         }
         getDates();
-      }, []);
+      }, [dates]);
 
     async function addIncomeItem(incomeData) {
         let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
