@@ -41,7 +41,7 @@ async function addExpenseToDay(req, res) {
   console.log(req.params.date, "expense");
   let date = req.params.date;
   console.log(date, "new date");
-  const day = await Date.getDay(date);
+  const day = await Date.getDay(req.user._id, date);
   console.log(day, "new day");
   await day.addExpenseToDay(req.body);
   res.json(day);

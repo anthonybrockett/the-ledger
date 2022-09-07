@@ -13,9 +13,9 @@ export default function CalendarDetail({date, selectedDate, setSelectedDate, add
             <main>
                     <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
                     <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-                    <button
+                    {/* <button
                     onClick={handleSaveDay}
-                    >Save Date</button>
+                    >Save Date</button> */}
             </main>
         </>
         
