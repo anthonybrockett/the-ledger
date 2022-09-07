@@ -27,12 +27,10 @@ export function saveDay(selectedDate) {
 
 // Add income to the day
 export function addIncomeToDay(date, incomeData) {
-    // let date = selectedDate.toString();
-    console.log(date, "test")
     return sendRequest(`${BASE_URL}/day/income/${date}`, 'POST', incomeData);
 }
 
 // Add expense to the day
-export function addExpenseToDay(expenseId) {
-    return sendRequest(`${BASE_URL}/day/expense/${expenseId}`, 'POST');
+export function addExpenseToDay(date, expenseData) {
+    return sendRequest(`${BASE_URL}/day/expense/${date}`, 'POST', expenseData);
 }

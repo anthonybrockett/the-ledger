@@ -11,7 +11,7 @@ const incomeSchema = new Schema({
 
 const expenseSchema = new Schema({
   amount: { type: Number, required: true, default: 0 },
-  notes: { type: String, required: false },
+  notes: { type: String, required: false, default: "" },
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
@@ -51,8 +51,7 @@ dateSchema.methods.addIncomeToDay = async function(income) {
 
 dateSchema.methods.addExpenseToDay = async function(expense) {
   const day = this;
-  const newExpense = { expense };
-  day.expense.push(newExpense);
+  day.expense.push(expense.expenseFormData);
   // Return the promise that's returned by the save method
   return day.save();
 };

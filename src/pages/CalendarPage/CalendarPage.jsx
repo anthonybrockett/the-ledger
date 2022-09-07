@@ -30,8 +30,9 @@ export default function CalendarPage() {
         setDay(updatedDay);
     }
     
-    async function addExpenseItem(expenseId) {
-        const updatedDay = await datesAPI.addExpenseToDay(expenseId);
+    async function addExpenseItem(expenseData) {
+        let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
+        const updatedDay = await datesAPI.addExpenseToDay(date, expenseData);
         setDay(updatedDay);    
     }
 
