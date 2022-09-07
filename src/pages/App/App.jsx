@@ -17,8 +17,8 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/' element={<DashboardPage />} />
-            <Route path='/dates' element={<CalendarPage />} />
+            {/* <Route path='/' element={<DashboardPage />} /> */}
+            <Route path='/' element={<CalendarPage />} />
           </Routes>
         </>
         :

@@ -1,0 +1,26 @@
+/* .IncomeItem {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vmin;
+  padding: 2vmin;
+  color: var(--text-light);
+  background-color: var(--white);
+  border: .1vmin solid var(--crimson);
+  border-radius: 1vmin;
+  font-size: 4vmin;
+} */
+
+.IncomeItem .amount {
+  height: 3vw;
+  width: 6vw;
+  font-size: 4vw;
+}
+
+.IncomeItem .notes {
+  font-size: 2vw;
+  text-align: center;
+  color: var(--crimson);
+}
+

@@ -13,9 +13,9 @@ export default function NavBar({ user, setUser }) {
     <nav>
       Welcome, {user.name}
       <br />
-      <Link to='/'>Dashboard</Link>
+      <Link to='/dashboard'>Dashboard</Link>
       <br />
-      <Link to='/dates'>Calendar</Link>
+      <Link to='/'>Calendar</Link>
       <br />
       <Link to='' onClick={handleLogOut} className="logout">Log Out</Link>
     </nav>

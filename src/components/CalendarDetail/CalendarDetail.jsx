@@ -1,10 +1,11 @@
 // import { useState } from 'react';
 import IncomeForm from "../IncomeForm/IncomeForm";
-import ExpenseForm from "../ExpenseForm/ExpenseForm"
+import ExpenseForm from "../ExpenseForm/ExpenseForm";
+import IncomeList from "../IncomeList/IncomeList";
 import "./CalendarDetail.css"
 
 
-export default function CalendarDetail({date, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay }) {
+export default function CalendarDetail({dates, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay }) {
 
     return (
         <>
@@ -13,11 +14,14 @@ export default function CalendarDetail({date, selectedDate, setSelectedDate, add
             <main>
                     <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
                     <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-                    {/* <button
-                    onClick={handleSaveDay}
-                    >Save Date</button> */}
             </main>
-        </>
-        
+            <article>
+                    <div style={{textAlign:"left", padding:"2px"}}>Income</div>
+                    <IncomeList 
+                        id="income-detail"
+                        incomeDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
+                    />
+            </article>          
+        </>  
     );
 }

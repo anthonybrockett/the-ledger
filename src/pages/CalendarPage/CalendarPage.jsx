@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import CalendarDetail from "../../components/CalendarDetail/CalendarDetail";
 import "./Calendar.css";
 import * as datesAPI from '../../utilities/dates-api';
+import IncomeList from '../../components/IncomeList/IncomeList';
 
 export default function CalendarPage() {
 
@@ -15,13 +16,13 @@ export default function CalendarPage() {
     // const navigate = useNavigate();
 
 
-    // useEffect(function() {
-    //     async function getDates() {
-    //       const dates = await datesAPI.getAllForUser();
-    //       setDates(dates)
-    //     }
-    //     getDates();
-    //   }, []);
+    useEffect(function() {
+        async function getDates() {
+          const dates = await datesAPI.getAllForUser();
+          setDates(dates)
+        }
+        getDates();
+      }, []);
 
     async function addIncomeItem(incomeData) {
         let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
@@ -49,7 +50,7 @@ export default function CalendarPage() {
             </div>
             <div id="detail">
                 <CalendarDetail 
-                // date={day} 
+                dates={dates} 
                 selectedDate={selectedDate} 
                 setSelectedDate={setSelectedDate} 
                 addIncomeItem={addIncomeItem}

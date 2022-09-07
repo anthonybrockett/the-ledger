@@ -9,11 +9,17 @@ main {
     display: grid;
     background-color: var(--sagegreen);
     grid-template-areas:
-    "income-form expense-form";
+    "income-form expense-form"
+    "income-detail expense-detail";
+
 }
 
 #income-form {
     grid-area: income-form;
+}
+
+#income-detail {
+    grid-area: income-detail;
 }
 
 #expense-form {
