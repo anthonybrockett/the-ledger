@@ -20,7 +20,7 @@ const expenseSchema = new Schema({
 
 const dateSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    date: { type: Date, required: false },
+    date: { type: String, required: false },
     income: [incomeSchema],
     expense: [expenseSchema],
     isSaved: { type: Boolean, default: false }
@@ -34,7 +34,7 @@ dateSchema.statics.getDay = function(userId, selectedDate) {
   // return the promise that resolves to a day (the user's unsaved day)
   return this.findOneAndUpdate(
     // query
-    { user: userId, isSaved: false },
+    { date: selectedDate, isSaved: false },
     // update - in the case the day is upserted
     { date: selectedDate },
     // upsert option creates the doc if it doesn't exist!
@@ -44,8 +44,7 @@ dateSchema.statics.getDay = function(userId, selectedDate) {
 
 dateSchema.methods.addIncomeToDay = async function(income) {
   const day = this;
-  const newIncome = { income };
-  day.income.push(newIncome);
+  day.income.push(income.incomeFormData);
   // Return the promise that's returned by the save method
   return day.save();
 };

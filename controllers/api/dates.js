@@ -28,9 +28,10 @@ async function createDay(req, res) {
 // Add an income item to day
 async function addIncomeToDay(req, res) {
   console.log(req.params.date, "income")
-  let date = new Date(req.params.date);
+  let date = req.params.date;
   console.log(date, "new date");
   const day = await Date.getDay(date);
+  console.log(day, "new day");
   await day.addIncomeToDay(req.body);
   res.json(day);
 }
@@ -49,6 +50,6 @@ async function forUser(req, res) {
 }
 
 async function show(req, res) {
-  const date = await Date.findById(req.params.id);
+  const date = await Date.findById(req.params.date);
   res.json(date);
 }
