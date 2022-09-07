@@ -30,7 +30,7 @@ async function addIncomeToDay(req, res) {
   console.log(req.params.date, "income")
   let date = req.params.date;
   console.log(date, "new date");
-  const day = await Date.getDay(date);
+  const day = await Date.getDay(req.user._id, date);
   console.log(day, "new day");
   await day.addIncomeToDay(req.body);
   res.json(day);

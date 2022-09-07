@@ -34,7 +34,7 @@ dateSchema.statics.getDay = function(userId, selectedDate) {
   // return the promise that resolves to a day (the user's unsaved day)
   return this.findOneAndUpdate(
     // query
-    { date: selectedDate, isSaved: false },
+    { user: userId, date: selectedDate },
     // update - in the case the day is upserted
     { date: selectedDate },
     // upsert option creates the doc if it doesn't exist!
