@@ -4,7 +4,7 @@ import ExpenseForm from "../ExpenseForm/ExpenseForm"
 import "./CalendarDetail.css"
 
 
-export default function CalendarDetail({date, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay}) {
+export default function CalendarDetail({date, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay }) {
 
     return (
         <>

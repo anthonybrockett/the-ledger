@@ -11,7 +11,7 @@ router.get('/day', datesCtrl.day);
 // POST /api/dates
 router.post('/day/createDay', datesCtrl.createDay);
 // POST /api/dates/day/income/:id
-router.post('/day/income/:id', datesCtrl.addIncomeToDay);
+router.post('/day/income/:date', datesCtrl.addIncomeToDay);
 // POST /api/dates/day/expense/:id
 router.post('/day/expense/:id', datesCtrl.addExpenseToDay);
 

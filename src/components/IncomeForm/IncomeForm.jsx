@@ -6,7 +6,7 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
 
   function handleAddIncomeItem(evt) {
     evt.preventDefault();
-    addIncomeItem(incomeFormData);
+    addIncomeItem({incomeFormData});
     setIncomeFormData({ amount: 50, notes: "" });
   }
 

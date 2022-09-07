@@ -15,16 +15,18 @@ export default function CalendarPage() {
     // const navigate = useNavigate();
 
 
-    useEffect(function() {
-        async function getDates() {
-          const dates = await datesAPI.getAllForUser();
-          setDates(dates)
-        }
-        getDates();
-      }, []);
+    // useEffect(function() {
+    //     async function getDates() {
+    //       const dates = await datesAPI.getAllForUser();
+    //       setDates(dates)
+    //     }
+    //     getDates();
+    //   }, []);
 
     async function addIncomeItem(incomeData) {
-        const updatedDay = await datesAPI.addIncomeToDay(incomeData);
+        let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
+        // console.log(date);
+        const updatedDay = await datesAPI.addIncomeToDay(date, incomeData);
         setDay(updatedDay);
     }
     
@@ -34,18 +36,19 @@ export default function CalendarPage() {
     }
 
     async function handleSaveDay() {
-        await datesAPI.saveDay();
+        await datesAPI.saveDay(selectedDate);
+        console.log(selectedDate)
     }
 
     return (
         <>
             <div id="calendar">
                 <h1>Calendar</h1>
-                <Calendar onChange={setSelectedDate} showNeighboringMonth={false} />
+                <Calendar onChange={setSelectedDate} value={selectedDate} showNeighboringMonth={false} />
             </div>
             <div id="detail">
                 <CalendarDetail 
-                date={day} 
+                // date={day} 
                 selectedDate={selectedDate} 
                 setSelectedDate={setSelectedDate} 
                 addIncomeItem={addIncomeItem}
