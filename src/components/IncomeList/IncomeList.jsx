@@ -9,11 +9,13 @@ export default function IncomeList({ incomeDate, deleteIncome }) {
       key={item._id}
       incomeItem={item}
       deleteIncome={deleteIncome}
+      incomeDate={incomeDate}
     />
     );
     return (
-      <main className="IncomeList">
-      {items}
-      </main>
+      <div className="IncomeList">
+        Income
+        {items}
+      </div>
   );
 }

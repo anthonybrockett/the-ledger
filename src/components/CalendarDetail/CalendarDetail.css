@@ -22,6 +22,10 @@ main {
     grid-area: income-detail;
 }
 
+#expense-detail {
+    grid-area: expense-detail;
+}
+
 #expense-form {
     grid-area: expense-form;
 }

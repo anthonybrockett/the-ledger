@@ -30,8 +30,8 @@ export default function CalendarPage() {
         setDay(updatedDay);
     }
     
-    async function deleteIncome(id) {
-        await datesAPI.deleteIncome(id);
+    async function deleteIncome(id, incomeDate) {
+        await datesAPI.deleteIncome(id, incomeDate);
     }
 
     async function addExpenseItem(expenseData) {

@@ -1,26 +1,14 @@
-/* .IncomeItem {
+.ExpenseItem {
   width: 100%;
   display: grid;
-  justify-content: space-between;
-  align-items: center;
+  grid-template-columns: auto;
   margin-bottom: 3vmin;
   padding: 2vmin;
-  color: var(--text-light);
-  background-color: var(--white);
-  border: .1vmin solid var(--crimson);
   border-radius: 1vmin;
-  font-size: 4vmin;
-} */
+  font-size: 2vmin;
+} 
 
-/* .IncomeItem .amount {
-  height: 3vw;
-  width: 6vw;
-  font-size: 4vw;
+#del-expense {
+  width: 5vmin;
+
 }
-
-.IncomeItem .notes {
-  font-size: 2vw;
-  text-align: center;
-  color: var(--crimson);
-} */
-

@@ -1,13 +1,12 @@
 import './IncomeItem.css';
 
-export default function IncomeItem({ incomeItem, deleteIncome }) {
+export default function IncomeItem({ incomeItem, deleteIncome, incomeDate }) {
   return (
     <div className="IncomeItem">
-      <li>
-        <div className="amount">{incomeItem.amount}</div>
-        <div className="notes">{incomeItem.notes}</div>
-        <button onClick={() => deleteIncome(incomeItem.id)}>X</button>
-      </li>
+        <div>Income: {incomeItem.amount}<br /> 
+          Notes: {incomeItem.notes} <br />
+          <button id="del-income" onClick={() => deleteIncome(incomeItem.id, incomeDate)}>X</button>
+        </div>
     </div>
   );
 }

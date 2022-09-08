@@ -14,21 +14,17 @@ export default function CalendarDetail({dates, selectedDate, setSelectedDate, ad
             <h3 id="cal-detail-title">{new Date(selectedDate).toLocaleDateString()}</h3>
             <main>
                     <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-                    <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                    <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />         
             </main>
-            <article>
-                    <div style={{textAlign:"left", padding:"2px"}}>Income</div>
-                    <IncomeList 
-                        id="income-detail"
-                        incomeDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
-                        deleteIncome={deleteIncome}
-                    />
-                    <div style={{textAlign:"left", padding:"2px"}}>Expense</div>
-                    <ExpenseList 
-                        id="expense-detail"
-                        expenseDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
-                    />
-            </article>          
+            <div>
+                <IncomeList
+                    incomeDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
+                    deleteIncome={deleteIncome}
+                />   
+                <ExpenseList           
+                    expenseDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
+                />   
+            </div>
         </>  
     );
 }

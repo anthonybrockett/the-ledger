@@ -53,16 +53,13 @@ async function show(req, res) {
 }
 
 async function deleteIncome(req, res) {
-  console.log(req.params);
-  const date = (await Date.find({id: req.params.id}))
-  console.log(date)
-  // const income = Date.income.find({id: req.params.id})
-  // console.log(income)
-  // await Date.findOneAndDelete({ _id: req.params.id });
-  // try {
-  //   await Date.income.findOneAndDelete({ _id: req.params._id });
-  // } catch (err) {
-  //   // console.log(err);
-  //   res.send(err);
-  // }
+  const dateId = req.body.id
+
+  const date = await Date.findOneAndUpdate(
+    {_id: dateId},
+    {$pull:
+      {
+        income: { _id: req.params.id}
+      }
+    });
 };

@@ -1,5 +1,7 @@
-.IncomeList {
+.ExpenseList {
   display: grid;
+  grid-area: income-detail;
+  width: 30vmin;
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 2vmin;
