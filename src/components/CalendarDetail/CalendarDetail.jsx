@@ -6,7 +6,7 @@ import ExpenseList from "../ExpenseList/ExpenseList"
 import "./CalendarDetail.css"
 
 
-export default function CalendarDetail({dates, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay }) {
+export default function CalendarDetail({dates, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay, deleteIncome }) {
 
     return (
         <>
@@ -21,6 +21,7 @@ export default function CalendarDetail({dates, selectedDate, setSelectedDate, ad
                     <IncomeList 
                         id="income-detail"
                         incomeDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
+                        deleteIncome={deleteIncome}
                     />
                     <div style={{textAlign:"left", padding:"2px"}}>Expense</div>
                     <ExpenseList 

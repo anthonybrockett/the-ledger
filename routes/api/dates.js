@@ -14,5 +14,7 @@ router.post('/day/createDay', datesCtrl.createDay);
 router.post('/day/income/:date', datesCtrl.addIncomeToDay);
 // POST /api/dates/day/expense/:id
 router.post('/day/expense/:date', datesCtrl.addExpenseToDay);
+// DELETE /api/dates/day/expense/:id
+router.delete('/day/income/:id', datesCtrl.deleteIncome);
 
 module.exports = router;
