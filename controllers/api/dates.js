@@ -8,6 +8,7 @@ module.exports = {
   addIncomeToDay,
   addExpenseToDay,
   deleteIncome,
+  deleteExpense,
 };
 
 async function day(req, res) {
@@ -60,6 +61,18 @@ async function deleteIncome(req, res) {
     {$pull:
       {
         income: { _id: req.params.id}
+      }
+    });
+};
+
+async function deleteExpense(req, res) {
+  const dateId = req.body.id
+
+  const date = await Date.findOneAndUpdate(
+    {_id: dateId},
+    {$pull:
+      {
+        expense: { _id: req.params.id}
       }
     });
 };

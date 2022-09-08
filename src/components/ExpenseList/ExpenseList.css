@@ -1,6 +1,6 @@
 .ExpenseList {
   display: grid;
-  grid-area: income-detail;
+  grid-area: expense-detail;
   width: 30vmin;
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);

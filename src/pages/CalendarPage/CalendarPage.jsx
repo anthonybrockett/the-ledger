@@ -33,13 +33,17 @@ export default function CalendarPage() {
     async function deleteIncome(id, incomeDate) {
         await datesAPI.deleteIncome(id, incomeDate);
     }
-
+    
     async function addExpenseItem(expenseData) {
         let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
         const updatedDay = await datesAPI.addExpenseToDay(date, expenseData);
         setDay(updatedDay);    
     }
-
+    
+    async function deleteExpense(id, expenseDate) {
+        await datesAPI.deleteExpense(id, expenseDate);
+    }
+    
     async function handleSaveDay() {
         await datesAPI.saveDay(selectedDate);
         console.log(selectedDate)
@@ -60,6 +64,7 @@ export default function CalendarPage() {
                 addExpenseItem={addExpenseItem}
                 handleSaveDay={handleSaveDay}
                 deleteIncome={deleteIncome}
+                deleteExpense={deleteExpense}
                 />
             </div>
         </>

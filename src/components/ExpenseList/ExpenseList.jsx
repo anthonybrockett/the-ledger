@@ -1,18 +1,21 @@
 import './ExpenseList.css';
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
 
-export default function ExpenseList({ expenseDate }) {
+export default function ExpenseList({ expenseDate, deleteExpense }) {
   if(!expenseDate) return null;
   
   const items = expenseDate.expense.map(item =>
     <ExpenseItem
       key={item._id}
       expenseItem={item}
+      deleteExpense={deleteExpense}
+      expenseDate={expenseDate}
     />
   );
   return (
-    <main className="ExpenseList">
+    <div className="ExpenseList">
+      Expense
       {items}
-    </main>
+    </div>
   );
 }
