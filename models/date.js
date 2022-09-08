@@ -23,7 +23,6 @@ const dateSchema = new Schema({
     date: { type: String, required: false },
     income: [incomeSchema],
     expense: [expenseSchema],
-    isSaved: { type: Boolean, default: false }
     }, {
     timestamps: true,
     toJSON: { virtuals: true }

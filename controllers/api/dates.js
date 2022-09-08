@@ -22,7 +22,6 @@ async function createDay(req, res) {
       user: req.user._id,
       date: req.body.selectedDate,
     });
-    day.isSaved = true;
     await day.save();
     res.json(day);
 }
