@@ -20,5 +20,7 @@ router.delete('/day/income/:id', datesCtrl.deleteIncome);
 router.delete('/day/expense/:id', datesCtrl.deleteExpense);
 // UPDATE /api/dates/day/income/:id
 router.post("/day/income/update/:id", datesCtrl.updateIncome)
+// UPDATE /api/dates/day/expense/:id
+router.post("/day/expense/update/:id", datesCtrl.updateExpense)
 
 module.exports = router;

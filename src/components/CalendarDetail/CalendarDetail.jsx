@@ -6,7 +6,7 @@ import ExpenseList from "../ExpenseList/ExpenseList"
 import "./CalendarDetail.css"
 
 
-export default function CalendarDetail({dates, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay, deleteIncome, deleteExpense, updateIncomeItem }) {
+export default function CalendarDetail({dates, selectedDate, setSelectedDate, addIncomeItem, addExpenseItem, handleSaveDay, deleteIncome, deleteExpense, updateIncomeItem, updateExpenseItem }) {
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function CalendarDetail({dates, selectedDate, setSelectedDate, ad
             <h3 id="cal-detail-title">{new Date(selectedDate).toLocaleDateString()}</h3>
             <main>
                     <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} updateIncomeItem={updateIncomeItem} />
-                    <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />         
+                    <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} updateExpenseItem={updateExpenseItem} />         
             </main>
             <div>
                 <IncomeList
@@ -25,6 +25,7 @@ export default function CalendarDetail({dates, selectedDate, setSelectedDate, ad
                 <ExpenseList           
                     expenseDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
                     deleteExpense={deleteExpense}
+                    updateExpenseItem={updateExpenseItem}
                 />   
             </div>
         </>  

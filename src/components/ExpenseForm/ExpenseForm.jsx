@@ -1,13 +1,24 @@
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 
-export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDate}) {
-  const [expenseFormData, setExpenseFormData] = useState({ amount: 50, notes: ""});
+export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDate, updateExpenseItem, expenseItem, expenseDate}) {
+  const [expenseFormData, setExpenseFormData] = useState(
+    expenseItem ? expenseItem :
+    { amount: 50, notes: ""});
+    const navigate = useNavigate();
 
   function handleAddExpenseItem(evt) {
     evt.preventDefault();
-    addExpenseItem({expenseFormData});
-    setExpenseFormData({ amount: 50, notes: "" });
+    if(expenseItem) {
+      const expenseId = expenseItem._id
+      updateExpenseItem(expenseFormData, expenseId, expenseDate)
+      navigate('/');
+    } else {
+      addExpenseItem({expenseFormData});
+      setExpenseFormData({ amount: 50, notes: "" });
+      navigate('/')
+    }
   }
 
   function handleChange(evt) {
@@ -36,7 +47,7 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
           onChange={handleChange}
           required
         />
-        <button type="submit">Add Expense</button>
+        <button type="submit">{expenseItem ? "UpdateExpense" : "Add Expense"}</button>
       </form>
     </>
   );

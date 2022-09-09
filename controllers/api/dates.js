@@ -10,6 +10,7 @@ module.exports = {
   deleteIncome,
   deleteExpense,
   updateIncome,
+  updateExpense,
 };
 
 async function day(req, res) {
@@ -62,21 +63,12 @@ async function deleteIncome(req, res) {
       {
         income: { _id: req.params.id}
       }
-    });
-  };
+    }
+  );
+};
   
-  async function updateIncome(req, res) {
-    // await console.log(req.params);
+async function updateIncome(req, res) {
     const dateId = req.body.incomeDate.id
-    // const test = Date.find({ _id: req.params._id })
-    // console.log(req.body.incomeDate)
-    // const date = await Date.findOneAndUpdate(
-    //   {_id: dateId},
-    //   {$set:
-    //     {
-    //       income: { amount: req.params.id}
-    //     }
-    //   });
 
   await Date.findOneAndUpdate(
     { _id: dateId },
@@ -84,14 +76,13 @@ async function deleteIncome(req, res) {
       {
         income: {amount: req.body.incomeFormData.amount, notes: req.body.incomeFormData.notes}
       }
-    })
+    }
+  )
 }
-
-
 
 async function deleteExpense(req, res) {
   const dateId = req.body.id
-
+  
   const date = await Date.updateMany(
     {_id: dateId},
     {$pull:
@@ -99,4 +90,17 @@ async function deleteExpense(req, res) {
         expense: { _id: req.params.id}
       }
     });
-};
+  };
+
+async function updateExpense(req, res) {
+    const dateId = req.body.expenseDate.id
+
+  await Date.findOneAndUpdate(
+    { _id: dateId },
+    {$set:
+      {
+        expense: {amount: req.body.expenseFormData.amount, notes: req.body.expenseFormData.notes}
+      }
+    }
+  )
+}
