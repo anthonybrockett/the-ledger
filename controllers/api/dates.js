@@ -68,14 +68,20 @@ async function deleteIncome(req, res) {
 };
   
 async function updateIncome(req, res) {
-    const dateId = req.body.incomeDate.id
-
+  const dateId = req.body.incomeDate.id;
   await Date.findOneAndUpdate(
-    { _id: dateId },
+    { "income._id": req.params.id },
     {$set:
       {
-        income: {amount: req.body.incomeFormData.amount, notes: req.body.incomeFormData.notes}
+        "income.$[y].amount": req.body.incomeFormData.amount, "income.$[y].notes": req.body.incomeFormData.notes
       }
+    },
+    {
+      arrayFilters: [
+        {
+          "y._id": req.params.id
+        }
+      ]
     }
   )
 }
@@ -96,11 +102,18 @@ async function updateExpense(req, res) {
     const dateId = req.body.expenseDate.id
 
   await Date.findOneAndUpdate(
-    { _id: dateId },
+    { "expense._id": req.params.id },
     {$set:
       {
-        expense: {amount: req.body.expenseFormData.amount, notes: req.body.expenseFormData.notes}
+        "expense.$[y].amount": req.body.expenseFormData.amount, "expense.$[y].notes": req.body.expenseFormData.notes
       }
+    },
+    {
+      arrayFilters: [
+        {
+          "y._id": req.params.id
+        }
+      ]
     }
   )
 }

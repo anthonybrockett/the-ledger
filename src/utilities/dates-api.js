@@ -42,7 +42,7 @@ export function deleteIncome(id, incomeDate) {
 
 // Update Income
 export function updateIncome(incomeFormData, id, incomeDate) {
-    return sendRequest(`${BASE_URL}/day/income/update/${id}`, "POST", ({incomeFormData, incomeDate}));
+    return sendRequest(`${BASE_URL}/day/income/update/${id}`, "PUT", ({incomeFormData, incomeDate}));
 }
 
 // Delete Expense
@@ -52,5 +52,5 @@ export function deleteExpense(id, expenseDate) {
 
 // Update Expense
 export function updateExpense(expenseFormData, id, expenseDate) {
-    return sendRequest(`${BASE_URL}/day/expense/update/${id}`, "POST", ({expenseFormData, expenseDate}));
+    return sendRequest(`${BASE_URL}/day/expense/update/${id}`, "PUT", ({expenseFormData, expenseDate}));
 }
