@@ -66,6 +66,8 @@ async function deleteIncome(req, res) {
       }
     }
   );
+  const dates = await Date.find({user: req.user._id}).sort('-updatedAt');
+  res.json(dates);
 };
   
 async function updateIncome(req, res) {

@@ -37,7 +37,8 @@ export default function CalendarPage() {
     }
     
     async function deleteIncome(id, incomeDate) {
-        await datesAPI.deleteIncome(id, incomeDate);
+        const newDates = await datesAPI.deleteIncome(id, incomeDate);
+        setDates(newDates);
     }
 
     async function updateExpenseItem(expenseData, id, expenseDate) {
