@@ -33,7 +33,8 @@ async function addIncomeToDay(req, res) {
   let date = req.params.date;
   const day = await Date.getDay(req.user._id, date);
   await day.addIncomeToDay(req.body);
-  res.json(day);
+  const dates = await Date.find({user: req.user._id}).sort('-updatedAt');
+  res.json(dates);
 }
 
 // Add an expense item to day

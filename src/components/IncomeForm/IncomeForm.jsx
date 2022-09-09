@@ -2,7 +2,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 
 
-export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate, updateIncomeItem, incomeItem, incomeDate}) {
+export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate, updateIncomeItem, incomeItem, incomeDate, updateStatus, setUpdateStatus}) {
   const [incomeFormData, setIncomeFormData] = useState(
     incomeItem ? incomeItem :
     {amount: 50, notes: ""});
@@ -14,6 +14,7 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
       const incomeId = incomeItem._id;
       // console.log(incomeId)
       updateIncomeItem(incomeFormData, incomeId, incomeDate);
+      setUpdateStatus(!updateStatus);
       navigate('/')
     } else {
       addIncomeItem({incomeFormData});

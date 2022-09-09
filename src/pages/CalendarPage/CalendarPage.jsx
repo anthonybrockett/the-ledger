@@ -26,8 +26,8 @@ export default function CalendarPage() {
     async function addIncomeItem(incomeData) {
         let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
         // console.log(date);
-        const updatedDay = await datesAPI.addIncomeToDay(date, incomeData);
-        setDay(updatedDay);
+        const updatedDates = await datesAPI.addIncomeToDay(date, incomeData);
+        setDates(updatedDates);
         
     }
 

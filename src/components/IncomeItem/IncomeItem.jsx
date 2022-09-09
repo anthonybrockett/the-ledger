@@ -7,11 +7,11 @@ export default function IncomeItem({ incomeItem, deleteIncome, incomeDate, updat
 
   return (
     <div className="IncomeItem">
-      { updateStatus ? <IncomeForm incomeItem={incomeItem} updateIncomeItem={updateIncomeItem} incomeDate={incomeDate} /> :
+      { updateStatus ? <IncomeForm incomeItem={incomeItem} updateIncomeItem={updateIncomeItem} incomeDate={incomeDate} updateStatus={updateStatus} setUpdateStatus={setUpdateStatus} /> :
         <div>Income: {incomeItem.amount}<br /> 
           Notes: {incomeItem.notes} <br />
           <button id="del-income" onClick={() => deleteIncome(incomeItem.id, incomeDate)}>X</button>
-          <button onClick={() => setUpdateStatus(true)}>Update</button>
+          <button onClick={() => setUpdateStatus(!updateStatus)}>Update</button>
         </div>
       }
     </div>
