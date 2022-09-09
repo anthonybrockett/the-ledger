@@ -1,7 +1,7 @@
 import './IncomeList.css';
 import IncomeItem from '../IncomeItem/IncomeItem';
 
-export default function IncomeList({ incomeDate, deleteIncome }) {
+export default function IncomeList({ incomeDate, deleteIncome, updateIncomeItem }) {
   if(!incomeDate) return null;
   
   const items = incomeDate.income.map(item =>
@@ -10,6 +10,7 @@ export default function IncomeList({ incomeDate, deleteIncome }) {
       incomeItem={item}
       deleteIncome={deleteIncome}
       incomeDate={incomeDate}
+      updateIncomeItem={updateIncomeItem}
     />
     );
     return (

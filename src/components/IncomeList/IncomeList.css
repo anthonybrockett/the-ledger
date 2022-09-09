@@ -1,7 +1,7 @@
 .IncomeList {
   display: grid;
   grid-area: income-detail;
-  width: 30vmin;
+  width: 100%;
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 2vmin;

@@ -1,13 +1,25 @@
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 
-export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate}) {
-  const [incomeFormData, setIncomeFormData] = useState({amount: 50, notes: ""});
+export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate, updateIncomeItem, incomeItem, incomeDate}) {
+  const [incomeFormData, setIncomeFormData] = useState(
+    incomeItem ? incomeItem :
+    {amount: 50, notes: ""});
+  const navigate = useNavigate();
 
   function handleAddIncomeItem(evt) {
     evt.preventDefault();
-    addIncomeItem({incomeFormData});
-    setIncomeFormData({ amount: 50, notes: "" });
+    if(incomeItem) {
+      const incomeId = incomeItem._id;
+      // console.log(incomeId)
+      updateIncomeItem(incomeFormData, incomeId, incomeDate);
+      navigate('/')
+    } else {
+      addIncomeItem({incomeFormData});
+      setIncomeFormData({ amount: 50, notes: "" });
+      navigate('/')
+    }
   }
 
   function handleChange(evt) {
@@ -21,7 +33,7 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
   return (
     <>
       <h1>Income</h1>
-      <form onSubmit={handleAddIncomeItem}>
+      <form onSubmit={handleAddIncomeItem} autoComplete="off">
         <label>Amount</label>
         <input
           name="amount"
@@ -36,7 +48,8 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
           onChange={handleChange}
           required
         />
-        <button type="submit">Add Income</button>
+        <button type="submit">{incomeItem ? "Update Income" : "Add Income"}</button>
+        {/* <button onClick={handleUpdateIncomeItem}>Update Income</button> */}
       </form>
     </>
   );
