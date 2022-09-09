@@ -42,18 +42,19 @@ export default function CalendarPage() {
     }
 
     async function updateExpenseItem(expenseData, id, expenseDate) {
-        const updatedDay = await datesAPI.updateExpense(expenseData, id, expenseDate);
-        setDay(updatedDay);
+        const updatedDates = await datesAPI.updateExpense(expenseData, id, expenseDate);
+        setDates(updatedDates);
     }
     
     async function addExpenseItem(expenseData) {
         let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
-        const updatedDay = await datesAPI.addExpenseToDay(date, expenseData);
-        setDay(updatedDay);    
+        const updatedDates = await datesAPI.addExpenseToDay(date, expenseData);
+        setDates(updatedDates);    
     }
     
     async function deleteExpense(id, expenseDate) {
-        await datesAPI.deleteExpense(id, expenseDate);
+        const newDates = await datesAPI.deleteExpense(id, expenseDate);
+        setDates(newDates);
     }
     
     async function handleSaveDay() {

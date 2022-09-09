@@ -7,11 +7,11 @@ export default function ExpenseItem({ expenseItem, deleteExpense, expenseDate, u
 
   return (
     <div className="ExpenseItem">
-      {updateStatus ? <ExpenseForm expenseItem={expenseItem} updateExpenseItem={updateExpenseItem} expenseDate={expenseDate} /> :
+      {updateStatus ? <ExpenseForm expenseItem={expenseItem} updateExpenseItem={updateExpenseItem} expenseDate={expenseDate} updateStatus={updateStatus} setUpdateStatus={setUpdateStatus} /> :
         <div>Expense: {expenseItem.amount} <br />
         Notes: {expenseItem.notes} <br />
         <button id="del-expense" onClick={() => deleteExpense(expenseItem.id, expenseDate)}>X</button>
-        <button onClick={() => setUpdateStatus(true)}>Update</button>
+        <button onClick={() => setUpdateStatus(!updateStatus)}>Update</button>
         </div>
       }
     </div>

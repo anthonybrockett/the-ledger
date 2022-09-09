@@ -42,7 +42,8 @@ async function addExpenseToDay(req, res) {
   let date = req.params.date;
   const day = await Date.getDay(req.user._id, date);
   await day.addExpenseToDay(req.body);
-  res.json(day);
+  const dates = await Date.find({user: req.user._id}).sort('-updatedAt');
+  res.json(dates);
 }
 
 async function forUser(req, res) {
@@ -100,8 +101,11 @@ async function deleteExpense(req, res) {
       {
         expense: { _id: req.params.id}
       }
-    });
-  };
+    }
+  );
+  const dates = await Date.find({user: req.user._id}).sort('-updatedAt');
+  res.json(dates);
+};
 
 async function updateExpense(req, res) {
     const dateId = req.body.expenseDate.id
@@ -121,4 +125,6 @@ async function updateExpense(req, res) {
       ]
     }
   )
+  const dates = await Date.find({user: req.user._id}).sort('-updatedAt');
+  res.json(dates)
 }

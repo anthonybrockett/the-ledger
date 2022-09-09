@@ -2,7 +2,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 
 
-export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDate, updateExpenseItem, expenseItem, expenseDate}) {
+export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDate, updateExpenseItem, expenseItem, expenseDate, updateStatus, setUpdateStatus}) {
   const [expenseFormData, setExpenseFormData] = useState(
     expenseItem ? expenseItem :
     { amount: 50, notes: ""});
@@ -13,6 +13,7 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
     if(expenseItem) {
       const expenseId = expenseItem._id
       updateExpenseItem(expenseFormData, expenseId, expenseDate)
+      setUpdateStatus(!updateStatus);
       navigate('/');
     } else {
       addExpenseItem({expenseFormData});
