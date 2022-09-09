@@ -85,6 +85,8 @@ async function updateIncome(req, res) {
       ]
     }
   )
+  const dates = await Date.find({user: req.user._id}).sort('-updatedAt');
+  res.json(dates)
 }
 
 async function deleteExpense(req, res) {
