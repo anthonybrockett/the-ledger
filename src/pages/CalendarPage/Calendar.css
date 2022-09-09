@@ -36,7 +36,7 @@ main {
 nav {
     grid-area: nav;
     display: grid;
-    grid-template-rows: 50fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60fr 1fr 1fr 1fr 1fr 1fr;
     height: 100%;
     background-color: var(--crimson);
     font-weight: bolder;
@@ -58,7 +58,7 @@ nav > .logout {
 
 #calendar {
     grid-area: calendar;
-    height: 60vh;
+    height: 15vh;
 }
 
 .react-calendar__month-view__weekdays__weekday {
@@ -78,4 +78,8 @@ abbr {
 .cal-detail-title {
     text-align: left;
     margin-left: 2px;
+}
+
+.react-calendar__navigation__label {
+    font-size: xx-large;
 }
