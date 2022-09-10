@@ -33,8 +33,7 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
 
   return (
     <>
-      <h1>Income</h1>
-      <form onSubmit={handleAddIncomeItem} autoComplete="off">
+      <form className="new-entry-form" onSubmit={handleAddIncomeItem} autoComplete="off">
         <label>Amount</label>
         <input
           name="amount"
@@ -48,9 +47,8 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
           value={incomeFormData.notes}
           onChange={handleChange}
           required
-        />
-        <button type="submit">{incomeItem ? "Update Income" : "Add Income"}</button>
-        {/* <button onClick={handleUpdateIncomeItem}>Update Income</button> */}
+        /> <br />
+        <button id="submit-income" type="submit">{incomeItem ? "Update Income" : "Add Income"}</button>
       </form>
     </>
   );

@@ -14,11 +14,11 @@ export default function App() {
     <main className="App">
       { user ?
         <>
-          <NavBar user={user} setUser={setUser} />
+          {/* <NavBar user={user} setUser={setUser} /> */}
           <Routes>
             {/* Route components in here */}
             {/* <Route path='/' element={<DashboardPage />} /> */}
-            <Route path='/' element={<CalendarPage />} />
+            <Route path='/' element={<CalendarPage user={user} setUser={setUser} />} />
           </Routes>
         </>
         :

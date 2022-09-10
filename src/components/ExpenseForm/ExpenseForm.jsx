@@ -32,7 +32,6 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
 
   return (
     <>
-      <h1>Expense</h1>
       <form onSubmit={handleAddExpenseItem}>
         <label>Amount</label>
         <input
@@ -47,7 +46,7 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
           value={expenseFormData.notes}
           onChange={handleChange}
           required
-        />
+        /> <br />
         <button type="submit">{expenseItem ? "UpdateExpense" : "Add Expense"}</button>
       </form>
     </>

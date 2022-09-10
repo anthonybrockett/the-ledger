@@ -1,12 +1,13 @@
 nav {
     grid-area: nav;
     display: grid;
-    grid-template-rows: 50fr 1fr 1fr 1fr 1fr 1fr;
-    height: 100%;
-    background-color: var(--crimson);
+    grid-template-rows: 48fr 1fr 1fr;
+    height: 100vh;
+    background-color: var(--steel);
     font-weight: bolder;
     color: white;
-    padding: 3px;    
+    padding-bottom: 5px;    
+    margin: 0;
 }
 
 nav > a {

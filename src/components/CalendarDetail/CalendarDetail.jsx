@@ -12,21 +12,24 @@ export default function CalendarDetail({dates, selectedDate, setSelectedDate, ad
         <>
             <hr />
             <h3 id="cal-detail-title">{new Date(selectedDate).toLocaleDateString()}</h3>
-            <main>
-                    <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} updateIncomeItem={updateIncomeItem} />
-                    <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} updateExpenseItem={updateExpenseItem} />         
-            </main>
-            <div>
-                <IncomeList
-                    incomeDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
-                    deleteIncome={deleteIncome}
-                    updateIncomeItem={updateIncomeItem}
+            <div className="calendar-detail">
+                    <h5 id="income-title">Income</h5><br />
+                    <IncomeForm id="income-form" addIncomeItem={addIncomeItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} updateIncomeItem={updateIncomeItem} /> <br />
+                    <h5 id="expense-title">Expense</h5><br />
+                    <ExpenseForm id="expense-form" addExpenseItem={addExpenseItem} selectedDate={selectedDate} setSelectedDate={setSelectedDate} updateExpenseItem={updateExpenseItem} />                       
+                    <div id="fill"> </div>
+                    <IncomeList
+                        id="income-detail"
+                        incomeDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
+                        deleteIncome={deleteIncome}
+                        updateIncomeItem={updateIncomeItem}
+                        />   
+                    <ExpenseList         
+                        id="expense-detail"  
+                        expenseDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
+                        deleteExpense={deleteExpense}
+                        updateExpenseItem={updateExpenseItem}
                     />   
-                <ExpenseList           
-                    expenseDate={dates.find(date => date.date === selectedDate.toLocaleDateString().replaceAll('/', '-'))}
-                    deleteExpense={deleteExpense}
-                    updateExpenseItem={updateExpenseItem}
-                />   
             </div>
         </>  
     );

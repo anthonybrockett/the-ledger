@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import CalendarDetail from "../../components/CalendarDetail/CalendarDetail";
+import NavBar from "../../components/NavBar/NavBar"
 import "./Calendar.css";
 import * as datesAPI from '../../utilities/dates-api';
 
-export default function CalendarPage() {
+export default function CalendarPage({user, setUser}) {
 
     const [day, setDay] = useState(null);
     const [dates, setDates] = useState([]);
@@ -63,9 +64,8 @@ export default function CalendarPage() {
     }
 
     return (
-        <>
+        <main className="calendar-page">
             <div id="calendar">
-                <h1>Calendar</h1>
                 <Calendar onChange={setSelectedDate} value={selectedDate} showNeighboringMonth={false} />
             </div>
             <div id="detail">
@@ -82,6 +82,9 @@ export default function CalendarPage() {
                 updateExpenseItem={updateExpenseItem}
                 />
             </div>
-        </>
+            <div id="nav">
+                <NavBar user={user} setUser={setUser} />
+            </div>
+        </main>
     );
   }

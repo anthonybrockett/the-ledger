@@ -29,6 +29,9 @@ code {
   --darkblue: #04153B;
   --text-light: #968c84;
   --text-dark: #615954;
+  --steel: #263748;
+  --dark-steel: #070C10;
+  --cloudy-sky: #EEF5FD;
 }
 
 *, *:before, *:after {
@@ -99,12 +102,12 @@ code {
   font-size: 2vmin;
 }
 
-.form-container {
+/* .form-container {
   padding: 3vmin;
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
-}
+} */
 
 p.error-message {
   color: var(--orange);
@@ -115,7 +118,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: var(--text-light);
+  color: var(--cloudy-sky);
 }
 
 label {
@@ -127,25 +130,25 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid var(--cloudy-sky);
   border-radius: .5vmin;
-  color: var(--text-dark);
+  color: var(--dark-steel);
   background-image: none !important; /* prevent lastpass */
   outline: none;
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: var(--crimson);
 }
 
 button, a.button {
   color: var(--white);
-  background-color: var(--crimson);
+  background-color: var(--dark-steel);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid var(--cloudy-sky);
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
@@ -163,10 +166,22 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--olivegreen);
+  background-color: var(--steel);
 }
 
-button[type="submit"] {
+button.login {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+button.sign-up {
+  width: 125px;
+}
+
+button.submit-income {
+  width: fit-content;
+}
+
+form.new-entry-form {
+  grid-column: span 1;
 }

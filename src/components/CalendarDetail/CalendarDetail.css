@@ -2,9 +2,10 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    height: fit-content;
 }
 
-main {
+/* main > .calendar-page{
     box-sizing: border-box;
     display: grid;
     background-color: var(--sagegreen);
@@ -12,6 +13,25 @@ main {
     "income-form expense-form"
     "income-detail expense-detail";
 
+} */
+
+div > .calendar-detail{
+    box-sizing: border-box;
+    display: grid;
+    /* background-color: var(--sagegreen); */
+    grid-template-areas:
+    "income-title income-title fill expense-title expense-title"
+    "income-form income-form fill expense-form expense-form"
+    "income-detail income-detail fill expense-detail expense-detail";
+
+}
+
+#income-title {
+    grid-area: income-title;
+}
+
+#expense-title {
+    grid-area: expense-title;
 }
 
 #income-form {
