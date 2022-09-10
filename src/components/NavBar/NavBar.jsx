@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      Welcome, {user.name}
+      Welcome, <br />{user.name}
       <br />
       {/* <Link to='/dashboard'>Dashboard</Link> */}
       <br />
