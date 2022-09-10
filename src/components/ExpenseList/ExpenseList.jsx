@@ -15,7 +15,6 @@ export default function ExpenseList({ expenseDate, deleteExpense, updateExpenseI
   );
   return (
     <div className="ExpenseList">
-      Expense
       {items}
     </div>
   );

@@ -5,16 +5,6 @@ body {
     height: fit-content;
 }
 
-/* main > .calendar-page{
-    box-sizing: border-box;
-    display: grid;
-    background-color: var(--sagegreen);
-    grid-template-areas:
-    "income-form expense-form"
-    "income-detail expense-detail";
-
-} */
-
 div > .calendar-detail{
     box-sizing: border-box;
     display: grid;

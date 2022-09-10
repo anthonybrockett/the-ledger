@@ -15,7 +15,6 @@ export default function IncomeList({ incomeDate, deleteIncome, updateIncomeItem 
     );
     return (
       <div className="IncomeList">
-        Income
         {items}
       </div>
   );

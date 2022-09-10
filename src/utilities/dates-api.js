@@ -12,13 +12,6 @@ export function getAllForUser() {
     return sendRequest(`${BASE_URL}/user`);
 }
 
-// This function is never actually used in SEI CAFE,
-// it's only provided as an example of RESTful routing, etc.
-// For example, you had a <MoviesDetailPage> component
-// export function getById(id) {
-//   return sendRequest(`${BASE_URL}/${id}`);
-// }
-
 export function saveDay(selectedDate) {
     // Changing data on the server, so make it a POST request
     console.log(selectedDate, "Testing Selected Date");

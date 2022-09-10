@@ -11,9 +11,6 @@ export default function CalendarPage({user, setUser}) {
     const [day, setDay] = useState(null);
     const [dates, setDates] = useState([]);
     const [selectedDate, setSelectedDate] = useState(new Date());
-    // const [incomeItems, setIncomeItems] = useState([]);
-    // const [expenseItems, setExpenseItems] = useState([]);
-    // const navigate = useNavigate();
 
 
     useEffect(function() {
@@ -26,7 +23,6 @@ export default function CalendarPage({user, setUser}) {
 
     async function addIncomeItem(incomeData) {
         let date = new Date(selectedDate).toLocaleDateString().replaceAll('/', '-');
-        // console.log(date);
         const updatedDates = await datesAPI.addIncomeToDay(date, incomeData);
         setDates(updatedDates);
         
