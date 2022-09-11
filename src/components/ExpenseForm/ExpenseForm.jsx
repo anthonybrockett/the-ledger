@@ -47,7 +47,7 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
           onChange={handleChange}
           required
         /> <br />
-        <button type="submit">{expenseItem ? "UpdateExpense" : "Add Expense"}</button>
+        <button type="submit">{expenseItem ? "Update Expense" : "Add Expense"}</button>
       </form>
     </>
   );
