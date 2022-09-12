@@ -21,3 +21,8 @@ nav > a {
 nav > .logout {  
     justify-content: end;
 }
+
+nav a:hover {
+    cursor: pointer;
+    background-color: var(--dark-steel)
+}
