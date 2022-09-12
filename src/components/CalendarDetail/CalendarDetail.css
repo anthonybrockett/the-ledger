@@ -8,6 +8,7 @@ body {
 div > .calendar-detail{
     box-sizing: border-box;
     display: grid;
+    margin: 0 25px;
     /* background-color: var(--sagegreen); */
     grid-template-areas:
     "income-title income-title fill expense-title expense-title"
@@ -42,5 +43,5 @@ div > .calendar-detail{
 
 #cal-detail-title {
     text-align: left;
-    margin-left: 2px;
+    margin-left: 25px;
 }

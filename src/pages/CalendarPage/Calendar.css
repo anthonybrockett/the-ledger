@@ -67,11 +67,13 @@ abbr {
 
 .react-calendar__navigation__label {
     font-size: x-large;
+    font-family: 'Marcellus SC', serif;
 }
 
 .react-calendar button {
     cursor: pointer;
-    background-color: var(--steel)
+    background-color: var(--steel);
+    font-family: 'Marcellus SC', serif;
 }
 
 .react-calendar button:enabled:hover {

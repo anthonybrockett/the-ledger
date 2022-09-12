@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import "./ExpenseForm.css"
 
 
 export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDate, updateExpenseItem, expenseItem, expenseDate, updateStatus, setUpdateStatus}) {
@@ -32,10 +33,11 @@ export default function ExpenseForm({addExpenseItem, selectedDate, setSelectedDa
 
   return (
     <>
-      <form onSubmit={handleAddExpenseItem}>
+      <form className="new-expense-form" onSubmit={handleAddExpenseItem} autoComplete="off">
         <label>Amount</label>
         <input
           name="amount"
+          type="Number"
           value={expenseFormData.amount}
           onChange={handleChange}
           required

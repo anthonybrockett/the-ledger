@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import "./IncomeForm.css";
 
 
 export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate, updateIncomeItem, incomeItem, incomeDate, updateStatus, setUpdateStatus}) {
@@ -33,10 +34,11 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
 
   return (
     <>
-      <form className="new-entry-form" onSubmit={handleAddIncomeItem} autoComplete="off">
+      <form className="new-income-form" onSubmit={handleAddIncomeItem} autoComplete="off">
         <label>Amount</label>
         <input
           name="amount"
+          type="Number"
           value={incomeFormData.amount}
           onChange={handleChange}
           required

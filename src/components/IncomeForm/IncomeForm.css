@@ -1,0 +1,21 @@
+.new-income-form {
+    font-family: 'Marcellus SC', serif;
+    color: black;
+}
+
+.new-income-form > input {
+    font-size: 1.5vmin;
+    font-family: 'Marcellus SC', serif;
+    color: black;
+}
+
+.new-income-form > button {
+    font-size: 1.5vmin;
+    font-family: 'Marcellus SC', serif;
+}
+
+.new-income-form > label {
+    font-size: 1.5vmin;
+    font-family: 'Marcellus SC', serif;
+}
+
