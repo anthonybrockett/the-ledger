@@ -9,10 +9,10 @@ There is no magic behind the idea of this website: it is simple, compact tool to
 ## Screenshots
 
 Login Page
-<img src="https://i.imgur.com/bbVpU1q.png"> <br><br>
+<img src="https://i.imgur.com/Rar9GYJ.png"> <br><br>
 
 Calendar(Main) Page
-<img src="https://i.imgur.com/V3FpGox.png">
+<img src="https://i.imgur.com/YGrrWxz.png">
 
 
 
