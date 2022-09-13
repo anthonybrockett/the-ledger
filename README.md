@@ -4,7 +4,7 @@
 
 ## Background
 
-There is no magic behind the idea of this website: it is simple, compact tool to log and keep track of income and expenses. It is so easy to fall into the "out-of-sight, out-of-mind" mindset when it comes to finances, but this application will attempt to address much of the heavy lifting.
+There is no magic behind the idea of this website: it is a simple, compact tool to log and keep track of income and expenses. It is so easy to fall into the "out-of-sight, out-of-mind" mindset when it comes to finances, but this application will attempt to address much of the heavy lifting.
 
 ## Screenshots
 
