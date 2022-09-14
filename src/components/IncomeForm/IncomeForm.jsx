@@ -13,7 +13,6 @@ export default function IncomeForm({addIncomeItem, selectedDate, setSelectedDate
     evt.preventDefault();
     if(incomeItem) {
       const incomeId = incomeItem._id;
-      // console.log(incomeId)
       updateIncomeItem(incomeFormData, incomeId, incomeDate);
       setUpdateStatus(!updateStatus);
       navigate('/')
